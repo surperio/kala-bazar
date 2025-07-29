@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* KalaMitra Design System - Celebrating Indian Heritage */
+
+@layer base {
+  :root {
+    /* Indian Heritage Color Palette */
+    --background: 42 25% 97%;
+    --foreground: 24 15% 15%;
+
+    --card: 42 30% 98%;
+    --card-foreground: 24 15% 15%;
+
+    --popover: 42 30% 98%;
+    --popover-foreground: 24 15% 15%;
+
+    /* Saffron-inspired primary */
+    --primary: 24 85% 55%;
+    --primary-foreground: 42 25% 97%;
+    --primary-glow: 24 90% 70%;
+
+    /* Terracotta secondary */
+    --secondary: 15 45% 75%;
+    --secondary-foreground: 24 20% 20%;
+
+    /* Sage green muted */
+    --muted: 120 15% 90%;
+    --muted-foreground: 120 10% 45%;
+
+    /* Deep forest accent */
+    --accent: 155 30% 25%;
+    --accent-foreground: 42 25% 97%;
+
+    /* Traditional gold */
+    --gold: 45 85% 60%;
+    --gold-foreground: 24 20% 20%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 42 25% 97%;
+
+    --border: 42 20% 85%;
+    --input: 42 20% 90%;
+    --ring: 24 85% 55%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-saffron: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-heritage: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-warm: linear-gradient(180deg, hsl(var(--background)), hsl(var(--secondary) / 0.3));
+    
+    /* Shadows */
+    --shadow-warm: 0 10px 30px -10px hsl(var(--primary) / 0.3);
+    --shadow-heritage: 0 20px 40px -15px hsl(var(--accent) / 0.4);
+    
+    /* Traditional patterns */
+    --pattern-dots: radial-gradient(circle at 2px 2px, hsl(var(--primary) / 0.15) 1px, transparent 0);
+    --pattern-lines: repeating-linear-gradient(45deg, transparent, transparent 8px, hsl(var(--primary) / 0.1) 8px, hsl(var(--primary) / 0.1) 10px);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-heritage: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-noto;
+  }
+}
+
+@layer components {
+  /* Heritage Button Variants */
+  .btn-heritage {
+    @apply bg-gradient-to-r from-primary to-primary-glow text-primary-foreground px-6 py-3 rounded-lg font-medium shadow-warm hover:shadow-heritage transition-all duration-300 hover:scale-105;
+  }
+
+  .btn-outline-heritage {
+    @apply border-2 border-primary text-primary px-6 py-3 rounded-lg font-medium hover:bg-primary hover:text-primary-foreground transition-colors duration-300;
+  }
+
+  .btn-gold {
+    @apply bg-gold text-gold-foreground px-6 py-3 rounded-lg font-medium hover:bg-gold/90 transition-colors duration-300;
+  }
+
+  /* Traditional Pattern Backgrounds */
+  .pattern-dots {
+    background-image: var(--pattern-dots);
+    background-size: 20px 20px;
+  }
+
+  .pattern-lines {
+    background-image: var(--pattern-lines);
+    background-size: 20px 20px;
+  }
+
+  /* Heritage Card */
+  .heritage-card {
+    @apply bg-card border border-border rounded-xl p-6 shadow-lg hover:shadow-heritage transition-shadow duration-300;
+  }
+
+  /* Artisan Profile Card */
+  .artisan-card {
+    @apply bg-card border border-border rounded-xl overflow-hidden hover:shadow-heritage transition-all duration-300 hover:-translate-y-1;
+  }
+
+  /* Product Grid Item */
+  .product-card {
+    @apply bg-card border border-border rounded-lg overflow-hidden hover:shadow-warm transition-all duration-300 hover:scale-105;
+  }
+
+  /* Navigation Links */
+  .nav-link {
+    @apply text-foreground hover:text-primary transition-colors duration-200 relative;
+  }
+
+  .nav-link::after {
+    @apply content-[''] absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  /* Traditional Divider */
+  .heritage-divider {
+    @apply h-px bg-gradient-to-r from-transparent via-border to-transparent;
+  }
+
+  /* Smooth animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-gentle-bounce {
+    animation: gentle-bounce 2s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+  .font-noto {
+    font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+  }
+
+  .font-inter {
+    font-family: 'Inter', 'Noto Sans Devanagari', sans-serif;
+  }
+
+  .text-shadow-warm {
+    text-shadow: 0 2px 8px hsl(var(--primary) / 0.3);
+  }
+
+  .backdrop-heritage {
+    backdrop-filter: blur(10px);
+    background: hsl(var(--background) / 0.8);
+  }
+
+  .gradient-text {
+    background: var(--gradient-saffron);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes gentle-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
